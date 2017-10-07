@@ -16,12 +16,22 @@ graph = [pri; seg; ter];
 x = size(graph)(1);
 graph = [graph; graph(x), 0];
 x = size(graph)(1);
+
+subplot(2, 1, 1);
 plot(graph(1:x), graph(x+1:x*2), "linewidth", 4);
-hold on;
+xlabel("Longitud (in)");
+ylabel("V (lb)");
+
 graph2 = [m1; m2; m3];
 x2 = size(graph2)(1);
 graph2 = [graph2; graph2(x2), 0];
 x2 = size(graph2)(1);
-plot(graph2(1:x2), graph2(x2+1:x2*2), "linewidth", 4);
+title("Diagrama de Esfuerzo Normal")
+
+subplot(2, 1, 2);
+plot(graph2(1:x2), graph2(x2+1:x2*2), "linewidth", 4, "color", 'r');
+xlabel("Longitud (in)");
+ylabel("M (lbin)");
+title("Diagrama de Momento");
 
 end
